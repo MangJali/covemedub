@@ -8,23 +8,27 @@
                 <a href="{{ url('admin/rumahsakit')}}" class="btn {{($data['menu'] == 'rumahsakit')?'bg-secondary text-white':'bg-light border border-dark'}} col m-1 p-3 text-center" style="border-radius: 15px;font-weight: 700">RUMAH SAKIT</a>
                 <a href="{{ url('admin/video')}}" class="btn {{($data['menu'] == 'video')?'bg-secondary text-white':'bg-light border border-dark'}} col m-1 p-3 text-center " style="border-radius: 15px;font-weight: 700">VIDEO</a>
                 <a href="{{ url('admin/poster')}}" class="btn {{($data['menu'] == 'poster')?'bg-secondary text-white':'bg-light border border-dark'}} col m-1 p-3 text-center" style="border-radius: 15px;font-weight: 700">POSTER</a>
+                <a href="{{ url('admin/slider')}}" class="btn {{($data['menu'] == 'slider')?'bg-secondary text-white':'bg-light border border-dark'}} col m-1 p-3 text-center" style="border-radius: 15px;font-weight: 700">Slider</a>
             </div>
         </div>
     </section>
 
-    <section>
-        @if($data['menu']=='artikel')
+    @if($data['menu']=='artikel')
+    @include('artikel',array('paginate'=>$data['paginate']))
+    @endif
+    @if($data['menu']=='rumahsakit')
+    @include('rumahsakit_admin',array('paginate'=>$data['paginate']))
+    @endif
+    @if($data['menu']=='video')
+    @include('video',array('paginate'=>$data['paginate']))
+    @endif
+    @if($data['menu']=='poster')
+    @include('poster',array('paginate'=>$data['paginate']))
+    @endif
+    @if($data['menu']=='slider')
+    @include('slider',array('paginate'=>$data['paginate']))
+    @endif
 
-        @endif
-        @if($data['menu']=='rumahsakit')
-        @endif
-        @if($data['menu']=='video')
-        @endif
-        @if($data['menu']=='video')
-        @endif
-    </section>
-
-    <div class="position-absolute bottom-0" style="z-index: -1; height: 15vmax;overflow: hidden;">
-        <img src="{{asset('assets/component_gelombang_2.svg')}}" alt="" style="transform: translate(-8.5%,-0%);width: 130%;">
-    </div>
+    <div style="height: 12vmax;"></div>
+    @include('gelombang')
     @include('footer')

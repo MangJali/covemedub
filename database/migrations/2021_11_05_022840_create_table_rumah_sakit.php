@@ -19,7 +19,7 @@ class CreateTableRumahSakit extends Migration
             $table->string("nama");
             $table->string("jenis");
             $table->string("tipe");
-            $table->string("alamat");
+            $table->text("alamat");
             $table->string("no_telp");
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateTableRumahSakit extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_rumah_sakit');
+        Schema::dropIfExists('rumah_sakit');
     }
 }

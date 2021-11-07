@@ -12,35 +12,24 @@
         <br>
         <br>
         <br>
+        @if(isset($data['slider']))
         <div class="container">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    @foreach($data['slider'] as $key => $val)
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$key}}" @if($key==0) class="active" aria-current="true" @endif aria-label="Slide 1"></button>
+                    @endforeach
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{asset('assets/cover.jpg')}}" class="d-block w-100" alt="..." style=" border-radius: 10px">
+                    @foreach($data['slider'] as $key => $val)
+                    <div class="carousel-item {{($key==0)?'active':''}}">
+                        <img src="{{asset('upload_file/'.$val->link_gambar)}}" class="d-block w-100" alt="..." style=" border-radius: 10px">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            <h5>{{$val->judul}}</h5>
+                            <p>{{$val->konten}}</p>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="{{asset('assets/cover.jpg')}}" class="d-block w-100" alt="..." style=" border-radius: 10px">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{asset('assets/cover.jpg')}}" class="d-block w-100" alt="..." style=" border-radius: 10px">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -52,6 +41,7 @@
                 </button>
             </div>
         </div>
+        @endif
         <br>
         <br>
         <br>
@@ -96,6 +86,7 @@
         </div>
     </section>
 
+    @if(isset($data['artikel']))
     <section class="position-relative" id="artikel">
         <div data-aos="fade-left" class="position-absolute top-0 end-0 " style="overflow-x: hidden;z-index: -1;">
             <img src="{{asset('assets/Health _Monochromatic.svg')}}" alt="#" style="width: 50vmax; transform: translateX(30%);" data-aos="fade-left">
@@ -104,40 +95,40 @@
             <div style="font-size: 1vmax;"><br> <br> <br> <br> <br> <br></div>
             <div class="row " data-aos="fade-right">
                 <div class="col-10 ">
-                    <h1 class="text-start fst-italic " style="font-size: 3vmax; ">Pentingnya Kesehatan Kehamilan di Masa Covid-19 </h1>
+                    <h1 class="text-start fst-italic " style="font-size: 3vmax; ">{{$data['artikel']->judul}}</h1>
                 </div>
                 <div class="col-8 " style="font-size: 1.5vmax; ">
-                    <p class="text-start fst-italic ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-                        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-                        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <p class="text-start fst-italic ms-0" style="font-weight: 700;">Baca Selengkapnya<i class="bi  bi-play-fill"></i></p>
+                    <p class="text-start fst-italic ">{{strlen($data['artikel']->isi)>500?substr($data['artikel']->isi,0,500)."...":$data['artikel']->isi}}</p>
+                    <p class="text-start fst-italic ms-0"  style="font-weight: 700;"><a style="text-decoration: none; color: #353B74;" href="{{url('artikel/'.$data['artikel']->id)}}" >Baca Selengkapnya<i class="bi  bi-play-fill"></i></a></p>
                 </div>
             </div>
         </div>
     </section>
+    @endif
 
     <section class="position-relative" style="overflow:hidden;" id="rumah_sakit" data-aos="fade-down">
         <div class="container">
             <br><br><br>
             <div class="d-flex justify-content-center">
+                @if(isset($data['rumah_sakit']))
                 <div class="card p-4 justify-content-center border-0" style="background: #6FBFDF;width: 42vmax;color: white; border-radius: 10px;">
                     <br>
                     <h3>Daftar Rumah Sakit & Puskesmas malang</h3>
                     <br>
                     <div style="font-size: 1.1rem;" class="text-start">
-                        @foreach($data as $val)
+                        @foreach($data['rumah_sakit'] as $val)
                         <div class="row justify-content-center">
-                            <div class="col-4">{{$val->nama}}</div>
-                            <div class="col-3">{{$val->no_telp}}</div>
-                            <div class="col-4">{{$val->alamat}}</div>
+                            <div class="col-4" style="overflow: hidden;white-space: nowrap;">{{$val->nama}}</div>
+                            <div class="col-3 text-center" style="overflow: hidden;white-space: nowrap;">{{$val->no_telp}}</div>
+                            <div class="col-4" style="overflow: hidden;white-space: nowrap;">{{$val->alamat}}</div>
                         </div>
-                        <hr>
                         @endforeach
                     </div>
                     <br>
                     <a type="button" href="/list-rumahsakit" class="btn btn-primary border-0 m-auto ps-5 pe-5" style="border-radius:5vmax;background: #353B74;font-weight: 600;">Lihat Detail</a>
                     <br>
                 </div>
+                @endif
                 <br>
             </div>
         </div>

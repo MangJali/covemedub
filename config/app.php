@@ -52,9 +52,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://covidmenub.ub-learningtechnology.com'),
+    'url' => env('APP_URL', 'https://covimed-ub.ub-learningtechnology.com'),
 
-    'asset_url' => env('ASSET_URL', 'https://covimed-ub.ub-learningtechnology.com/public/'),
+    'asset_url' => env('ASSET_URL', null),
 
     /*
     |--------------------------------------------------------------------------

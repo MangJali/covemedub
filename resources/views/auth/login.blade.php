@@ -12,16 +12,16 @@
                         <br>
                         <input type="email" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Username" class="form-control p-3" style="font-weight: 600;border-radius:10px">
                         @error('email')
-                        <span class="invalid-feedback" role="alert">
+                        <div class="alert alert-danger">
                             <strong>{{ $message }}</strong>
-                        </span>
+                        </div>
                         @enderror
                         <br>
                         <input type="password" placeholder="Password" class="form-control p-3" style="font-weight: 600;border-radius:10px" @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                         @error('password')
-                        <span class="invalid-feedback" role="alert">
+                        <div class="alert alert-danger">
                             <strong>{{ $message }}</strong>
-                        </span>
+                        </div>
                         @enderror
                         <br>
                         <br>
