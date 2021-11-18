@@ -40,21 +40,21 @@
                     <img class="w-100 rounded-circle" src="{{ asset('assets/NsDefi.jpg') }}" alt="">
                     <br>
                     <br>
-                    <H3 style="font-weight: 700; font-size: 1.5vmax;">Muladefi Choiriyah</H3>
+                    <H3 style="font-weight: 700; font-size: 1.5vmax;">Ns. Muladefi Choiriyah, S.Kep., M.Kep</H3>
                     <H4 style="font-weight: 600; font-size: 1.5vmax;">Keperawatan Maternitas</H4>
                 </div>
                 <div class="col-3 justify-content-center">
                     <img class="w-100 rounded-circle" src="{{ asset('assets/NsAyut.jpg') }}" alt="">
                     <br>
                     <br>
-                    <H3 style="font-weight: 700;font-size: 1.5vmax;">Ayut Merdikawati</H3>
+                    <H3 style="font-weight: 700;font-size: 1.5vmax;">Ns. Ayut Merdikawati, S.Kep., M.Kep</H3>
                     <H4 style="font-weight: 600;font-size: 1.5vmax;">Keperawatan Maternitas</H4>
                 </div>
                 <div class="col-3 justify-content-center">
                     <img class="w-100 rounded-circle" src="{{ asset('assets/avatar_cewek.svg') }}" alt="">
                     <br>
                     <br>
-                    <H3 style="font-weight: 700;font-size: 1.5vmax;">Faizatul Amalia</H3>
+                    <H3 style="font-weight: 700;font-size: 1.5vmax;">Faizatul Amalia, S.Pd., M.Pd</H3>
                     <H4 style="font-weight: 600;font-size: 1.5vmax;">Teknologi Informasi</H4>
                 </div>
             </div>
