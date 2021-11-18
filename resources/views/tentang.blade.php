@@ -36,21 +36,21 @@
         <h1 class=" fst-italic">Team Leader</h1>
         <div class="container pt-5 mt-5">
             <div class="row justify-content-center">
-                <div class="col-3 justify-content-center">
+                <div class="col-4 justify-content-center">
                     <img class="w-100 rounded-circle" src="{{ asset('assets/NsDefi.jpg') }}" alt="">
                     <br>
                     <br>
                     <H3 style="font-weight: 700; font-size: 1.5vmax;">Ns. Muladefi Choiriyah, S.Kep., M.Kep</H3>
                     <H4 style="font-weight: 600; font-size: 1.5vmax;">Keperawatan Maternitas</H4>
                 </div>
-                <div class="col-3 justify-content-center">
+                <div class="col-4 justify-content-center">
                     <img class="w-100 rounded-circle" src="{{ asset('assets/NsAyut.jpg') }}" alt="">
                     <br>
                     <br>
                     <H3 style="font-weight: 700;font-size: 1.5vmax;">Ns. Ayut Merdikawati, S.Kep., M.Kep</H3>
                     <H4 style="font-weight: 600;font-size: 1.5vmax;">Keperawatan Maternitas</H4>
                 </div>
-                <div class="col-3 justify-content-center">
+                <div class="col-4 justify-content-center">
                     <img class="w-100 rounded-circle" src="{{ asset('assets/avatar_cewek.svg') }}" alt="">
                     <br>
                     <br>
